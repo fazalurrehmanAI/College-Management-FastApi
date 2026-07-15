@@ -83,6 +83,7 @@ app.include_router(enrollment.router)
 @app.get("/health")
 def health():
     return {"status": "OK"}
+
 # --------------------------------------------
 
 if __name__ == "__main__":
