@@ -44,12 +44,12 @@ jobs:
         run: |
           docker build \
           -t ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
-          -t ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:v1 .
+          -t ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest .
 
       - name: Push Docker Images
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
-          docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:v1
+          docker push ${{ secrets.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
 
       # - name: Install Railway CLI
       #   run: npm install -g @railway/cli
